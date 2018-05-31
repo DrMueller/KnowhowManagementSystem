@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:domain="clr-namespace:Mmu.Kms.Domain;assembly=Mmu.Kms.Domain">
+
+    <DataTemplate x:Key="FileTypeTemplate" DataType="{x:Type domain:FileType}">
+        <Label Content="{Binding Description, Mode=OneWay}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="FileTagTemplate" DataType="{x:Type domain:FileTag}">
+        <Label Content="{Binding Description, Mode=OneWay}" />
+    </DataTemplate>
+
+</ResourceDictionary>

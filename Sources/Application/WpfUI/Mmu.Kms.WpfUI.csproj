@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\Text.Analyzers.2.6.0\build\Text.Analyzers.props" Condition="Exists('..\..\..\packages\Text.Analyzers.2.6.0\build\Text.Analyzers.props')" />
+  <Import Project="..\..\..\packages\Microsoft.NetFramework.Analyzers.2.6.0\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\..\..\packages\Microsoft.NetFramework.Analyzers.2.6.0\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\..\..\packages\Microsoft.NetCore.Analyzers.2.6.0\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\..\..\packages\Microsoft.NetCore.Analyzers.2.6.0\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\..\..\packages\Microsoft.CodeQuality.Analyzers.2.6.0\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\..\..\packages\Microsoft.CodeQuality.Analyzers.2.6.0\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9B7BC40-9D35-4079-B299-D864CAD8415B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Mmu.Kms.WpfUI</RootNamespace>
+    <AssemblyName>Mmu.Kms.WpfUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\CA_ProductionCode.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\AutoMapper.7.0.0-alpha-0001\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.4.0.1044, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\MaterialDesignThemes.2.4.0.1044\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Mmu.Mlh.ApplicationExtensions, Version=1.0.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Mmu.Mlh.ApplicationExtensions.1.0.30\lib\netstandard2.0\Mmu.Mlh.ApplicationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mmu.Mlh.DomainExtensions, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Mmu.Mlh.DomainExtensions.1.0.14\lib\netstandard2.0\Mmu.Mlh.DomainExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mmu.Mlh.LanguageExtensions, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Mmu.Mlh.LanguageExtensions.1.2.11\lib\netstandard2.0\Mmu.Mlh.LanguageExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Mmu.Mlh.WpfExtensions, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Mmu.Mlh.WpfExtensions.1.0.18\lib\net47\Mmu.Mlh.WpfExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NLog.5.0.0-beta11\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=4.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\StructureMap.4.6.1\lib\net45\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Areas\FileManagement\UserControls\FileDisplay\FileDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Areas\FileManagement\UserControls\FileDisplay\FileDisplayDict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Areas\FileManagement\Views\Dictionaries\FileSearchViewDict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Areas\FileManagement\Views\FileManagementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Areas\FileManagement\Views\FileSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Areas\FileManagement\Views\FilesOverviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Areas\FileTagManagement\Views\FileTagEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Areas\FileTagManagement\Views\FileTagsOveriewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\FileManagement\UserControls\FileDisplay\FileDisplayItemViewModel.cs" />
+    <Compile Include="Areas\FileManagement\UserControls\FileDisplay\FileDisplay.xaml.cs">
+      <DependentUpon>FileDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\FileManagement\ViewModels\FileManagementViewModel.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\FileSearchParametersViewModel.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\FileSearchViewModel.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\FilesOverviewViewModel.cs" />
+    <Compile Include="Areas\FileManagement\Views\FileManagementView.xaml.cs">
+      <DependentUpon>FileManagementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\FileManagement\Views\FileSearchView.xaml.cs">
+      <DependentUpon>FileSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\FileManagement\Views\FilesOverviewView.xaml.cs">
+      <DependentUpon>FilesOverviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\FileTagManagement\ViewModels\FileTagEditViewModel.cs" />
+    <Compile Include="Areas\FileTagManagement\ViewModels\ViewModelCommands\FileTagEditViewModelCommands.cs" />
+    <Compile Include="Areas\FileTagManagement\ViewModels\FileTagsOverviewViewModel.cs" />
+    <Compile Include="Areas\FileTagManagement\Views\FileTagEditView.xaml.cs">
+      <DependentUpon>FileTagEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\FileTagManagement\Views\FileTagsOveriewView.xaml.cs">
+      <DependentUpon>FileTagsOveriewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\FileTagManagement\ViewModels\ViewModelCommands\FileTagsOverViewViewModelCommands.cs" />
+    <Compile Include="Infrastructure\DependencyInjection\WpfUiRegistry.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Mmu.Kms.Application.csproj">
+      <Project>{0d9ae414-680b-4e74-a468-aaabbbb6e168}</Project>
+      <Name>Mmu.Kms.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainServices.DataAccess\Mmu.Kms.DomainServices.DataAccess.csproj">
+      <Project>{3216d466-16e4-40fe-ad94-a9f4d3cc723c}</Project>
+      <Name>Mmu.Kms.DomainServices.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainServices.Shell\Mmu.Kms.DomainServices.Shell.csproj">
+      <Project>{9463ff52-7219-4be2-b049-1d47adec07a9}</Project>
+      <Name>Mmu.Kms.DomainServices.Shell</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainServices\Mmu.Kms.DomainServices.csproj">
+      <Project>{8e0f3c38-3065-439f-9ab5-260b15292072}</Project>
+      <Name>Mmu.Kms.DomainServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Mmu.Kms.Domain.csproj">
+      <Project>{2423bb8b-7a71-445d-926c-095a0ac0a4ef}</Project>
+      <Name>Mmu.Kms.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\FileManagement\Dtos\" />
+    <Folder Include="Areas\FileManagement\Services\" />
+    <Folder Include="Areas\FileManagement\ViewModels\ViewModelCommands\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Infrastructure\Assets\FA_Arrow.png" />
+    <Resource Include="Infrastructure\Assets\FA_Cog_Green.png" />
+    <Resource Include="Infrastructure\Assets\FA_Exclamation_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\packages\Microsoft.CodeQuality.Analyzers.2.6.0\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.CodeQuality.Analyzers.2.6.0\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.NetCore.Analyzers.2.6.0\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.NetCore.Analyzers.2.6.0\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.NetFramework.Analyzers.2.6.0\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\..\..\packages\Microsoft.NetFramework.Analyzers.2.6.0\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\..\..\packages\Text.Analyzers.2.6.0\analyzers\dotnet\cs\Text.Analyzers.dll" />
+    <Analyzer Include="..\..\..\packages\Text.Analyzers.2.6.0\analyzers\dotnet\cs\Text.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Infrastructure\Assets\M.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Infrastructure\Assets\M.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.CodeQuality.Analyzers.2.6.0\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.CodeQuality.Analyzers.2.6.0\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.NetCore.Analyzers.2.6.0\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.NetCore.Analyzers.2.6.0\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.NetFramework.Analyzers.2.6.0\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.NetFramework.Analyzers.2.6.0\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\Text.Analyzers.2.6.0\build\Text.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Text.Analyzers.2.6.0\build\Text.Analyzers.props'))" />
+  </Target>
+</Project>

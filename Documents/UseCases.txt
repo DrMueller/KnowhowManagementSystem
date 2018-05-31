@@ -1,0 +1,45 @@
+# Tags
+- Zentral verwaltet
+- Files zeigen mit sprechendem eindeutigem Namen auf Tag
+
+# Suche
+- Suche nach Inhalt
+  - Direkt Text, Wird, OpenDoc, PDF
+- Suche nach Name
+- Suche nach Endung
+- Suche nach Tag
+--> Specication Pattern
+
+# Uuse Case
+## Tag Management
+- Show all Tags
+- Create Tag
+- Update Tag
+- Delete Tag
+
+## File Management
+### Display
+- Show all Files in Dropbox
+- Selectable 
+--> Custom Control
+
+### Tagging
+- Add Tag to file
+- Remove Tag from File
+- Batch Edit Tags
+--> Each File gets a txt file with same name in the same folder
+--> Make file hidden
+
+### Orphaned Files
+- Search for orphaned Files, therefore TagFiles without corresponding files
+
+
+# Idea
+- List empty Folders
+- Delete stuff
+
+# Postponed
+- Tag Hierarchie
+- File MultiSelect
+
+
