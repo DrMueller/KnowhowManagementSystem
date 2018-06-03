@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vx="clr-namespace:Mmu.Mlh.WpfExtensions.Areas.ViewExtensions.Components;assembly=Mmu.Mlh.WpfExtensions"
              mc:Ignorable="d" 
              d:DesignHeight="150" d:DesignWidth="400">
     <Grid>
@@ -44,8 +45,8 @@
             Grid.Row="1"
             Orientation="Horizontal"
             HorizontalAlignment="Right">
-            <Button Height="30" Width="80" Content="Cancel" />
-            <Button Height="30" Width="80" Content="Save" />
+            <vx:CommandButton Height="30" Width="80" ViewModelCommand="{Binding Save, Mode=OneWay}" />
+            <vx:CommandButton Height="30" Width="80" ViewModelCommand="{Binding Cancel, Mode=OneWay}" />
         </StackPanel>
     </Grid>
 </UserControl>

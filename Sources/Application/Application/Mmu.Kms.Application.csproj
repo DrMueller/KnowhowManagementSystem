@@ -43,8 +43,8 @@
     <Reference Include="Mmu.Mlh.DomainExtensions, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Mmu.Mlh.DomainExtensions.1.0.14\lib\netstandard2.0\Mmu.Mlh.DomainExtensions.dll</HintPath>
     </Reference>
-    <Reference Include="Mmu.Mlh.LanguageExtensions, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Mmu.Mlh.LanguageExtensions.1.2.11\lib\netstandard2.0\Mmu.Mlh.LanguageExtensions.dll</HintPath>
+    <Reference Include="Mmu.Mlh.LanguageExtensions, Version=1.2.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Mmu.Mlh.LanguageExtensions.1.2.13\lib\netstandard2.0\Mmu.Mlh.LanguageExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -70,6 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Domain\Dtos\FileTagDto.cs" />
+    <Compile Include="Areas\Domain\Dtos\Profiles\FileTagDtoProfile.cs" />
+    <Compile Include="Areas\Domain\Services\IFileTagDataService.cs" />
+    <Compile Include="Areas\Domain\Services\Implementation\FileTagDataService.cs" />
+    <Compile Include="Infrastructure\DependencyInjection\ApplicationRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -98,7 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\App\" />
-    <Folder Include="Infrastructure\DependencyInjection\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

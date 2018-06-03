@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Mmu.Mlh.ApplicationExtensions.Areas.DependencyInjection.Models;
 using Mmu.Mlh.WpfExtensions.Areas.Initialization;
 
 namespace Mmu.Kms.WpfUI
@@ -12,9 +13,7 @@ namespace Mmu.Kms.WpfUI
 
             var appConfig = ApplicationConfiguration.CreateFromIcon("Know-how Management System", appIcon);
 
-            var tra = new Mmu.Kms.DomainServices.DataAccess.Areas.Dtos.ShadowFileDto();
-
-            await BootstrapService.StartUpAsync(thisAssembly, appConfig);
+            await BootstrapService.StartUpAsync(new AssemblyParameters(thisAssembly, "Mmu.Kms"), appConfig);
         }
     }
 }

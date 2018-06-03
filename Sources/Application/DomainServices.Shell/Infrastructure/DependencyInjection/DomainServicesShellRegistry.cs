@@ -11,7 +11,12 @@ namespace Mmu.Kms.DomainServices.Shell.Infrastructure.DependencyInjection
     {
         public DomainServicesShellRegistry()
         {
-            
+            Scan(
+                scanner =>
+                {
+                    scanner.AssemblyContainingType(typeof(DomainServicesShellRegistry));
+                    scanner.WithDefaultConventions();
+                });
         }
     }
 }
