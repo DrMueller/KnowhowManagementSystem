@@ -1,4 +1,5 @@
-﻿using Mmu.Kms.Domain;
+﻿using Mmu.Kms.Application.Areas.Domain.Common.Dtos;
+using Mmu.Kms.Application.Areas.Domain.FileManagement.Dtos;
 using Mmu.Mlh.WpfExtensions.Areas.MvvmShell.ViewModels.Models;
 
 namespace Mmu.Kms.WpfUI.Areas.FileManagement.ViewModels
@@ -7,7 +8,7 @@ namespace Mmu.Kms.WpfUI.Areas.FileManagement.ViewModels
     {
         public string FileContent { get; set; }
         public string FileName { get; set; }
-        public FileTag FileTag { get; set; }
-        public FileType FileType { get; set; }
+        public FileTagDto FileTag { get; set; }
+        public FileTypeDto FileType { get; set; }
     }
 }

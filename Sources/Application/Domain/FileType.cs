@@ -13,13 +13,16 @@ namespace Mmu.Kms.Domain
         public string Description { get; }
         public string Extension { get; }
         public static FileType Markdown =>
-            new FileType("Markdown", "MD");
+            new FileType("Markdown", ".MD");
         public static FileType Pdf =>
-            new FileType("PDF", "PDF");
+            new FileType("PDF", ".PDF");
         public static FileType TextFile =>
-            new FileType("Text", "TXT");
+            new FileType("Text", ".TXT");
         public static FileType Word =>
-            new FileType("Word", "DOCX");
+            new FileType("Word", ".DOCX");
+
+        public static FileType Unknown =>
+            new FileType("Unknown", string.Empty);
 
         public static IReadOnlyCollection<FileType> All
             => new List<FileType>
@@ -27,7 +30,8 @@ namespace Mmu.Kms.Domain
                 Markdown,
                 Pdf,
                 TextFile,
-                Word
+                Word,
+                Unknown
             };
     }
 }

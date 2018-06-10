@@ -40,6 +40,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Mmu.Kms.WpfUI.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\AutoMapper.7.0.0-alpha-0001\lib\net45\AutoMapper.dll</HintPath>
@@ -97,15 +100,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Areas\FileManagement\UserControls\FileDisplay\FileDisplay.xaml">
+    <Page Include="Areas\FileManagement\UserControls\FileSearch\FileSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\UserControls\FileDisplay\FileDisplayDict.xaml">
+    <Page Include="Areas\FileManagement\UserControls\FileSearch\FileSearchDict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\Views\Dictionaries\FileSearchViewDict.xaml">
+    <Page Include="Areas\FileManagement\Views\Dirctionaries\FileTagDisplayDict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Areas\FileManagement\Views\Dirctionaries\TreeViewDict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Areas\FileManagement\Views\FileEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,11 +124,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\Views\FileSearchView.xaml">
+    <Page Include="Areas\FileManagement\Views\FilesOverviewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\Views\FilesOverviewView.xaml">
+    <Page Include="Areas\FileManagement\Views\FileTagDisplayView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,30 +140,42 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Areas\FileManagement\UserControls\FileDisplay\FileDisplayItemViewModel.cs" />
-    <Compile Include="Areas\FileManagement\UserControls\FileDisplay\FileDisplay.xaml.cs">
-      <DependentUpon>FileDisplay.xaml</DependentUpon>
+    <Compile Include="Areas\FileManagement\Services\IFileEditService.cs" />
+    <Compile Include="Areas\FileManagement\Services\Implementation\FileEditService.cs" />
+    <Compile Include="Areas\FileManagement\Services\Implementation\StructureEntryIconFactory.cs" />
+    <Compile Include="Areas\FileManagement\Services\Implementation\Tra.cs" />
+    <Compile Include="Areas\FileManagement\Services\Implementation\DirectoryViewModelFactory.cs" />
+    <Compile Include="Areas\FileManagement\Services\IDirectoryViewModelFactory.cs" />
+    <Compile Include="Areas\FileManagement\Services\IStructureEntryIconFactory.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\DirectoryViewModel.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\FileDisplayItemViewModel.cs" />
+    <Compile Include="Areas\FileManagement\UserControls\FileSearch\FileSearch.xaml.cs">
+      <DependentUpon>FileSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Areas\FileManagement\ViewModels\FileEditViewModel.cs" />
     <Compile Include="Areas\FileManagement\ViewModels\FileManagementViewModel.cs" />
     <Compile Include="Areas\FileManagement\ViewModels\FileSearchParametersViewModel.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\FileSearchViewModel.cs" />
     <Compile Include="Areas\FileManagement\ViewModels\FilesOverviewViewModel.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\FileTagDisplayViewModel.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\FileTagViewModel.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\FileViewModel.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\ViewModelCommands\FileEditViewModelCommands.cs" />
+    <Compile Include="Areas\FileManagement\ViewModels\ViewModelCommands\FileManagementViewModelCommands.cs" />
+    <Compile Include="Areas\FileManagement\Views\FileEditView.xaml.cs">
+      <DependentUpon>FileEditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Areas\FileManagement\Views\FileManagementView.xaml.cs">
       <DependentUpon>FileManagementView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\FileManagement\Views\FileSearchView.xaml.cs">
-      <DependentUpon>FileSearchView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Areas\FileManagement\Views\FilesOverviewView.xaml.cs">
       <DependentUpon>FilesOverviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\FileManagement\Views\FileTagDisplayView.xaml.cs">
+      <DependentUpon>FileTagDisplayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Areas\FileTagManagement\Services\IFileTagNavigationService.cs" />
     <Compile Include="Areas\FileTagManagement\Services\Implementation\FileTagNavigationService.cs" />
@@ -167,14 +190,15 @@
     </Compile>
     <Compile Include="Areas\FileTagManagement\ViewModels\ViewModelCommands\FileTagsOverViewViewModelCommands.cs" />
     <Compile Include="Infrastructure\DependencyInjection\WpfUiRegistry.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="Infrastructure\ResourceDictionaries\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
+      <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -212,20 +236,8 @@
       <Project>{9463ff52-7219-4be2-b049-1d47adec07a9}</Project>
       <Name>Mmu.Kms.DomainServices.Shell</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DomainServices\Mmu.Kms.DomainServices.csproj">
-      <Project>{8e0f3c38-3065-439f-9ab5-260b15292072}</Project>
-      <Name>Mmu.Kms.DomainServices</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\Mmu.Kms.Domain.csproj">
-      <Project>{2423bb8b-7a71-445d-926c-095a0ac0a4ef}</Project>
-      <Name>Mmu.Kms.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\FileManagement\Dtos\" />
-    <Folder Include="Areas\FileManagement\Services\" />
-    <Folder Include="Areas\FileManagement\ViewModels\ViewModelCommands\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Infrastructure\Assets\FA_Arrow.png" />
     <Resource Include="Infrastructure\Assets\FA_Cog_Green.png" />

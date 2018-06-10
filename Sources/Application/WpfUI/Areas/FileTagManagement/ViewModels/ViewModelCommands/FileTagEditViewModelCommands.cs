@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Mmu.Kms.Application.Areas.Domain.Services;
+using Mmu.Kms.Application.Areas.Domain.FileTagManagement.Services;
 using Mmu.Mlh.WpfExtensions.Areas.MvvmShell.Commands;
 using Mmu.Mlh.WpfExtensions.Areas.Navigation.Services;
 
@@ -33,8 +33,7 @@ namespace Mmu.Kms.WpfUI.Areas.FileTagManagement.ViewModels.ViewModelCommands
                             {
                                 await _fileTagDataService.SaveAsync(context.FileTag);
                                 await _navigationservice.NavigateToAsync<FileTagsOverviewViewModel>();
-                            },
-                            () => context.FileTag != null));
+                            }));
 
                     Cancel = new ViewModelCommand(
                         "Cancel",

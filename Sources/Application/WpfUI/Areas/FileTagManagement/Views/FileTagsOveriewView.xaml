@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:vx="clr-namespace:Mmu.Mlh.WpfExtensions.Areas.ViewExtensions.Components;assembly=Mmu.Mlh.WpfExtensions"
+             xmlns:vxc="clr-namespace:Mmu.Mlh.WpfExtensions.Areas.ViewExtensions.Components;assembly=Mmu.Mlh.WpfExtensions"
+             xmlns:vxd="clr-namespace:Mmu.Mlh.WpfExtensions.Areas.ViewExtensions.DependencyProperties;assembly=Mmu.Mlh.WpfExtensions"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -14,15 +15,34 @@
 
         <StackPanel
             Orientation="Horizontal">
-            <vx:CommandButton Height="30" Width="80" ViewModelCommand="{Binding CreateFileTag, Mode=OneWay}" />
-            <vx:CommandButton Height="30" Width="80" ViewModelCommand="{Binding UpdateFileTag, Mode=OneWay}" />
-            <vx:CommandButton Height="30" Width="80" ViewModelCommand="{Binding DeleteFileTag, Mode=OneWay}" />
+            <vxc:CommandButton Height="30" Width="80" ViewModelCommand="{Binding CreateFileTag, Mode=OneWay}" />
+            <vxc:CommandButton Height="30" Width="80" Margin="10,0,0,0" ViewModelCommand="{Binding UpdateFileTag, Mode=OneWay}" />
+            <vxc:CommandButton Height="30" Width="80" Margin="10,0,0,0" ViewModelCommand="{Binding DeleteFileTag, Mode=OneWay}" />
         </StackPanel>
 
         <DataGrid
             Grid.Row="1"
             SelectedItem="{Binding SelectedFileTag, Mode=TwoWay}"
             ItemsSource="{Binding FileTags, Mode=OneWay}"
-            VerticalScrollBarVisibility="Visible" />
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            IsReadOnly="false"
+            vxd:DataGridDoubleClickCommandBinding.DataGridDoubleClickCommand="{Binding UpdateFileTag, Mode=OneWay}"
+            VerticalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Binding="{Binding Name, Mode=OneWay}"
+                    Header="Name"
+                    IsReadOnly="true"
+                    Width="*" />
+
+                <DataGridTextColumn
+                    Binding="{Binding Description, Mode=OneWay}"
+                    Header="Name"
+                    IsReadOnly="true"
+                    Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

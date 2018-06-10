@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:dtos="clr-namespace:Mmu.Kms.Application.Areas.Domain.FileManagement.Dtos;assembly=Mmu.Kms.Application"
+                    xmlns:dtos1="clr-namespace:Mmu.Kms.Application.Areas.Domain.Common.Dtos;assembly=Mmu.Kms.Application">
+    <DataTemplate x:Key="FileTypeTemplate" DataType="{x:Type dtos:FileTypeDto}">
+        <Label Content="{Binding Description, Mode=OneWay}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="FileTagTemplate" DataType="{x:Type dtos1:FileTagDto}">
+        <Label Content="{Binding Description, Mode=OneWay}" />
+    </DataTemplate>
+
+</ResourceDictionary>

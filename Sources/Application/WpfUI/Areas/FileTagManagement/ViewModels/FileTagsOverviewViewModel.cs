@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using Mmu.Kms.Domain;
-using Mmu.Kms.DomainServices.Areas.Repositories;
+using Mmu.Kms.Application.Areas.Domain.Common.Dtos;
+using Mmu.Kms.Application.Areas.Domain.FileTagManagement.Services;
 using Mmu.Kms.WpfUI.Areas.FileTagManagement.ViewModels.ViewModelCommands;
 using Mmu.Mlh.WpfExtensions.Areas.MvvmShell.Commands;
 using Mmu.Mlh.WpfExtensions.Areas.MvvmShell.ViewModels.Behaviors;
@@ -14,33 +14,33 @@ namespace Mmu.Kms.WpfUI.Areas.FileTagManagement.ViewModels
         IViewModelWithHeading,
         IInitializableViewModel
     {
-        private readonly IFileTagRepository _fileTagRepository;
         private readonly FileTagsOverViewViewModelCommands _commands;
-
-        public ObservableCollection<FileTag> FileTags { get; private set; }
-
-        public FileTag SelectedFileTag { get; set; }
+        private readonly IFileTagDataService _fileTagDataService;
 
         public FileTagsOverviewViewModel(
-            IFileTagRepository fileTagRepository,
+            IFileTagDataService fileTagDataService,
             FileTagsOverViewViewModelCommands commands
-            )
+        )
         {
-            _fileTagRepository = fileTagRepository;
+            _fileTagDataService = fileTagDataService;
             _commands = commands;
         }
 
         public ViewModelCommand CreateFileTag => _commands.CreateFileTag;
         public ViewModelCommand DeleteFileTag => _commands.DeleteFileTag;
+        public ObservableCollection<FileTagDto> FileTags { get; private set; }
+        public FileTagDto SelectedFileTag { get; set; }
         public ViewModelCommand UpdateFileTag => _commands.UpdateFileTag;
-        public string NavigationDescription { get; } = "Tags";
-        public int NavigationSequence { get; } = 2;
-        public string HeadingText { get; } = "Tags Management";
 
         public async Task InitializeAsync()
         {
-            var tagsList = await _fileTagRepository.LoadAllAsync();
-            FileTags = new ObservableCollection<FileTag>(tagsList);
+            await _commands.InitializeAsync(this);
+            var tagsList = await _fileTagDataService.LoadAllAsync();
+            FileTags = new ObservableCollection<FileTagDto>(tagsList);
         }
+
+        public string NavigationDescription { get; } = "Tags";
+        public int NavigationSequence { get; } = 2;
+        public string HeadingText { get; } = "Tags Management";
     }
 }

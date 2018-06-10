@@ -1,2 +1,10 @@
 - Icons für Files
 - Validations
+- Double Click für FileTagOverview nicht funktionabel
+- Neue Windows in MVVM
+- Generisches ParameteredRelayCommand
+- Collapsible Panel
+- Asynchronität
+- ProceessProxy
+- Icons für FIleType in DropDown
+- Restrukrueriung der ViewModels

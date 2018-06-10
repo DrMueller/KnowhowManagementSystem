@@ -4,9 +4,9 @@ namespace Mmu.Kms.Domain
 {
     public class File
     {
-        public File(string directoryPath, string fileName, FileContent content, FileType fileType, IReadOnlyCollection<FileTag> tags)
+        public File(string filePath, string fileName, FileContent content, FileType fileType, IReadOnlyCollection<FileTag> tags)
         {
-            DirectoryPath = directoryPath;
+            FilePath = filePath;
             FileName = fileName;
             Content = content;
             FileType = fileType;
@@ -14,7 +14,7 @@ namespace Mmu.Kms.Domain
         }
 
         public FileContent Content { get; }
-        public string DirectoryPath { get; }
+        public string FilePath { get; }
         public string FileName { get; }
         public FileType FileType { get; }
         public IReadOnlyCollection<FileTag> Tags { get; }

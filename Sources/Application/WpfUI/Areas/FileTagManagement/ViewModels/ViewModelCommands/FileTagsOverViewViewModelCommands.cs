@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Mmu.Kms.Application.Areas.Domain.Services;
+using Mmu.Kms.Application.Areas.Domain.FileTagManagement.Services;
 using Mmu.Kms.WpfUI.Areas.FileTagManagement.Services;
 using Mmu.Mlh.LanguageExtensions.Areas.Maybes;
 using Mmu.Mlh.WpfExtensions.Areas.MvvmShell.Commands;

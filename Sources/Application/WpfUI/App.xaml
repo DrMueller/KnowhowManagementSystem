@@ -1,9 +1,9 @@
 ﻿<Application x:Class="Mmu.Kms.WpfUI.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Mmu.Kms.WpfUI"
-             StartupUri="MainWindow.xaml">
+             xmlns:rd="resour"
+             xmlns:local="clr-namespace:Mmu.Kms.WpfUI">
     <Application.Resources>
-         
+        <ResourceDictionary Source="Infrastructure/ResourceDictionaries/Common.xaml" />
     </Application.Resources>
 </Application>
