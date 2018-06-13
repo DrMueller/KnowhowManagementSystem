@@ -71,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\Domain\FileManagement\Dtos\DirectoryDto.cs" />
-    <Compile Include="Areas\Domain\FileManagement\Dtos\DirectoryStructureDto.cs" />
     <Compile Include="Areas\Domain\FileManagement\Dtos\FileContentDto.cs" />
     <Compile Include="Areas\Domain\FileManagement\Dtos\FileDto.cs" />
     <Compile Include="Areas\Domain\FileManagement\Dtos\FileSearchParametersDto.cs" />

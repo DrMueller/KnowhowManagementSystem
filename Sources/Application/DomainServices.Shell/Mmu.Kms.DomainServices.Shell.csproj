@@ -92,8 +92,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\DataModels\DirectoryDataModel.cs" />
+    <Compile Include="Areas\DataModels\FileDataModel.cs" />
     <Compile Include="Areas\Factories\FileTagFactory.cs" />
     <Compile Include="Areas\Services\DirectoryStructureService.cs" />
+    <Compile Include="Areas\Services\Servants\IDirectoryServant.cs" />
+    <Compile Include="Areas\Services\Servants\Implementation\DirectoryServant.cs" />
     <Compile Include="Infrastructure\DependencyInjection\DomainServicesShellRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

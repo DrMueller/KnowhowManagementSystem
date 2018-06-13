@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Mmu.Kms.Domain
 {
@@ -23,6 +24,9 @@ namespace Mmu.Kms.Domain
 
         public static FileType Unknown =>
             new FileType("Unknown", string.Empty);
+
+        public static FileType CreateFromExtension(string extension) =>
+            All.FirstOrDefault(f => f.Extension == extension.ToUpperInvariant()) ?? Unknown;
 
         public static IReadOnlyCollection<FileType> All
             => new List<FileType>

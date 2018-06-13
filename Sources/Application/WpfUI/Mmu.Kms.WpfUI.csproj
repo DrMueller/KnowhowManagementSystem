@@ -100,35 +100,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Areas\FileManagement\UserControls\FileSearch\FileSearch.xaml">
+    <Page Include="Areas\FileManagement\FileOverview\UserControls\FileSearch\FileSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\UserControls\FileSearch\FileSearchDict.xaml">
+    <Page Include="Areas\FileManagement\FileOverview\UserControls\FileSearch\FileSearchDict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\Views\Dirctionaries\FileTagDisplayDict.xaml">
+    <Page Include="Areas\FileManagement\FileEdit\Views\Dictionaries\FileTagDisplayDict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\Views\Dirctionaries\TreeViewDict.xaml">
+    <Page Include="Areas\FileManagement\FileOverview\Views\Dirctionaries\FileManagementViewDict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\Views\FileEditView.xaml">
+    <Page Include="Areas\FileManagement\FileEdit\Views\FileEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\Views\FileManagementView.xaml">
+    <Page Include="Areas\FileManagement\FileOverview\Views\FileManagementView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\Views\FilesOverviewView.xaml">
+    <Page Include="Areas\FileManagement\FileOverview\Views\FilesOverviewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Areas\FileManagement\Views\FileTagDisplayView.xaml">
+    <Page Include="Areas\FileManagement\FileEdit\Views\FileTagDisplayView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,37 +144,37 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Areas\FileManagement\Services\IFileEditService.cs" />
-    <Compile Include="Areas\FileManagement\Services\Implementation\FileEditService.cs" />
-    <Compile Include="Areas\FileManagement\Services\Implementation\StructureEntryIconFactory.cs" />
-    <Compile Include="Areas\FileManagement\Services\Implementation\Tra.cs" />
-    <Compile Include="Areas\FileManagement\Services\Implementation\DirectoryViewModelFactory.cs" />
-    <Compile Include="Areas\FileManagement\Services\IDirectoryViewModelFactory.cs" />
-    <Compile Include="Areas\FileManagement\Services\IStructureEntryIconFactory.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\DirectoryViewModel.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\FileDisplayItemViewModel.cs" />
-    <Compile Include="Areas\FileManagement\UserControls\FileSearch\FileSearch.xaml.cs">
+    <Compile Include="Areas\FileManagement\FileEdit\Services\IFileEditService.cs" />
+    <Compile Include="Areas\FileManagement\FileEdit\Services\Implementation\FileEditService.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\Models\FolderEntryViewModelType.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\Services\IFolderEntrySearchService.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\Services\Implementation\FolderEntrySearchService.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\Services\Servants\Implementation\StructureEntryIconFactory.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\Services\Servants\Implementation\FolderEntryViewModelFactory.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\Services\Servants\IFolderEntryViewModelFactory.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\Services\Servants\IStructureEntryIconFactory.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\UserControls\FileSearch\FileSearch.xaml.cs">
       <DependentUpon>FileSearch.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\FileManagement\ViewModels\FileEditViewModel.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\FileManagementViewModel.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\FileSearchParametersViewModel.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\FilesOverviewViewModel.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\FileTagDisplayViewModel.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\FileTagViewModel.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\FileViewModel.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\ViewModelCommands\FileEditViewModelCommands.cs" />
-    <Compile Include="Areas\FileManagement\ViewModels\ViewModelCommands\FileManagementViewModelCommands.cs" />
-    <Compile Include="Areas\FileManagement\Views\FileEditView.xaml.cs">
+    <Compile Include="Areas\FileManagement\FileEdit\ViewModels\FileEditViewModel.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\ViewModels\FileManagementViewModel.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\ViewModels\FileSearchParametersViewModel.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\ViewModels\FilesOverviewViewModel.cs" />
+    <Compile Include="Areas\FileManagement\FileEdit\ViewModels\FileTagDisplayViewModel.cs" />
+    <Compile Include="Areas\FileManagement\FileEdit\ViewModels\FileTagViewModel.cs" />
+    <Compile Include="Areas\FileManagement\FileEdit\ViewModels\ViewModelCommands\FileEditViewModelCommands.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\ViewModels\FolderEntryViewModel.cs" />
+    <Compile Include="Areas\FileManagement\FileOverview\ViewModels\ViewModelCommands\FileManagementViewModelCommands.cs" />
+    <Compile Include="Areas\FileManagement\FileEdit\Views\FileEditView.xaml.cs">
       <DependentUpon>FileEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\FileManagement\Views\FileManagementView.xaml.cs">
+    <Compile Include="Areas\FileManagement\FileOverview\Views\FileManagementView.xaml.cs">
       <DependentUpon>FileManagementView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\FileManagement\Views\FilesOverviewView.xaml.cs">
+    <Compile Include="Areas\FileManagement\FileOverview\Views\FilesOverviewView.xaml.cs">
       <DependentUpon>FilesOverviewView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Areas\FileManagement\Views\FileTagDisplayView.xaml.cs">
+    <Compile Include="Areas\FileManagement\FileEdit\Views\FileTagDisplayView.xaml.cs">
       <DependentUpon>FileTagDisplayView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Areas\FileTagManagement\Services\IFileTagNavigationService.cs" />

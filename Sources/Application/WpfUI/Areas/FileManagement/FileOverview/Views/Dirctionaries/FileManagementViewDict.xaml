@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewModels="clr-namespace:Mmu.Kms.WpfUI.Areas.FileManagement.FileOverview.ViewModels">
+    
+    <HierarchicalDataTemplate DataType="{x:Type viewModels:FolderEntryViewModel}" ItemsSource="{Binding SubEntries}">
+        <StackPanel Orientation="Horizontal">
+            <Image
+                x:Name="Img"
+                Height="15"
+                HorizontalAlignment="Left"
+                Source="{Binding IconPath, Mode=OneWay}"
+                RenderTransformOrigin="0.5,0.5"
+                Width="15" />
+            
+            <Label Content="{Binding Name, Mode=OneWay}" />
+            <Label Content="{Binding TagDescription, Mode=OneWay}" />
+        </StackPanel>
+    </HierarchicalDataTemplate>
+
+
+</ResourceDictionary>

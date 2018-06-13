@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mmu.Kms.DomainServices.Shell.Areas.Services.Servants;
+using Mmu.Kms.DomainServices.Shell.Areas.Services.Servants.Implementation;
 using StructureMap;
 
 namespace Mmu.Kms.DomainServices.Shell.Infrastructure.DependencyInjection
@@ -17,6 +14,8 @@ namespace Mmu.Kms.DomainServices.Shell.Infrastructure.DependencyInjection
                     scanner.AssemblyContainingType(typeof(DomainServicesShellRegistry));
                     scanner.WithDefaultConventions();
                 });
+
+            For<IDirectoryServant>().Use<DirectoryServant>();
         }
     }
 }

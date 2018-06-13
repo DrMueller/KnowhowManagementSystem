@@ -6,6 +6,6 @@ namespace Mmu.Kms.DomainServices.Areas.Services
 {
     public interface IDirectoryStructureService
     {
-        Task<DirectoryStructure> SearchFilesAsync(FileSearchParameters parameters);
+        Task<IReadOnlyCollection<Directory>> SearchFilesAsync(FileSearchParameters parameters);
     }
 }
